@@ -1,11 +1,20 @@
 package com.wd.userapplication.user;
 
+import javax.persistence.*;
+
+@Entity
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int userId;
     private String firstName;
     private String lastName;
     private String emailId;
     private String phoneNumber;
+    private String dob;
+    private String occupation;
+
 
     public int getUserId() {
         return userId;
@@ -46,4 +55,21 @@ public class User {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
+    public String getDob() {
+        return dob;
+    }
+
+    public void setDob(String dob) {
+        this.dob = dob;
+    }
+
+    public String getOccupation() {
+        return occupation;
+    }
+
+    public void setOccupation(String occupation) {
+        this.occupation = occupation;
+    }
+
 }
